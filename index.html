@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="author" content="BrainSpark">
+    <meta name="description" content="NursePulse es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
+    <meta name="keywords" content="NursePulse, BrainSpark, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
+    <meta name="theme-color" content="#0f766e" id="themeColorMeta" />
+    <meta name="color-scheme" content="light" />
+
+    <title>NursePulse | BrainSpark</title>
+
+    <link rel="canonical" href="https://front-nursepulse.vercel.app/sign-in">
+    <link rel="icon" type="image/png" href="assets/pestana-logo.png" />
+    <link rel="preload" as="image" href="assets/hero-healthcare.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/stethoscope-with-heart-drawing.webp" type="image/webp" fetchpriority="high" />
+    <script>
+        (function () {
+            try {
+                localStorage.setItem("nursepulse_theme", "light");
+                document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
+            } catch (error) {
+                document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "NursePulse",
+            "alternateName": "BrainSpark",
+            "url": "https://front-nursepulse.vercel.app/sign-in",
+            "email": "contacto@nursepulse.pe",
+            "areaServed": "PE"
+        }
+    </script>
+</head>
+<body>
+<a href="#main-content" class="skip-link" id="skiplink" data-i18n="accessibility.skip-content">Skip to main content</a>
+<!-- Navigation -->
+<nav class="navbar" data-i18n-aria="accessibility.primary-nav" aria-label="Primary navigation">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a class="logo" id="logoLink" href="#" data-i18n-aria="accessibility.home" aria-label="Go to home">
+                <img class="logo-image" src="assets/logo-optimized.png" alt="BrainSpark" width="152" height="66" decoding="async" fetchpriority="high">
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#problem" data-i18n="nav.problem">El problema</a></li>
+                <li><a href="#how-it-works" data-i18n="nav.how-it-works">¿Cómo funciona?</a></li>
+                <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
+                <li><a href="#pricing" class="nav-pricing-cta" data-i18n="nav.pricing">Planes</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
+            </ul>
+
+            <div class="nav-header-end">
+                <div class="language-swicher" role="group" data-i18n-aria="accessibility.language" aria-label="Language">
+                    <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">
+                        <span class="lang-btn__flag" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <clipPath id="flag-uk-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                                </defs>
+                                <g clip-path="url(#flag-uk-clip)">
+                                    <!-- Blue background -->
+                                    <rect width="24" height="24" fill="#012169"/>
+                                    <!-- White diagonals -->
+                                    <line x1="0" y1="0" x2="24" y2="24" stroke="#ffffff" stroke-width="4.8"/>
+                                    <line x1="24" y1="0" x2="0" y2="24" stroke="#ffffff" stroke-width="4.8"/>
+                                    <!-- Red diagonals -->
+                                    <line x1="0" y1="0" x2="24" y2="24" stroke="#C8102E" stroke-width="2"/>
+                                    <line x1="24" y1="0" x2="0" y2="24" stroke="#C8102E" stroke-width="2"/>
+                                    <!-- White cross -->
+                                    <rect x="10" y="0" width="4" height="24" fill="#ffffff"/>
+                                    <rect x="0" y="10" width="24" height="4" fill="#ffffff"/>
+                                    <!-- Red cross -->
+                                    <rect x="10.8" y="0" width="2.4" height="24" fill="#C8102E"/>
+                                    <rect x="0" y="10.8" width="24" height="2.4" fill="#C8102E"/>
+                                </g>
+                                <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                            </svg>
+                        </span>
+                        <span class="lang-btn__label">EN</span>
+                    </button>
+                    <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">
+                        <span class="lang-btn__flag" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <clipPath id="flag-es-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                                </defs>
+                                <g clip-path="url(#flag-es-clip)">
+                                    <rect width="24" height="24" fill="#aa151b"/>
+                                    <rect y="6" width="24" height="12" fill="#f1bf00"/>
+                                </g>
+                                <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                            </svg>
+                        </span>
+                        <span class="lang-btn__label">ES</span>
+                    </button>
+                </div>
+                <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="accessibility.open-menu" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+
+        <div class="container">
+            <div class="hero-layout">
+                <!-- Left: Text content -->
+                <div class="hero-content">
+                    <!-- Main headline -->
+                    <h1 class="hero-brand" id="hero-heading" data-hero-anim="true">
+                        <span class="hero-title__before" data-i18n="hero.title.before">Pulse </span>
+                        <span class="hero-title__accent" data-i18n="hero.title.accent">Report</span>
+                    </h1>
+
+                    <!-- Supporting subtitle -->
+                    <h2 class="hero-subtitle" data-hero-anim="true">
+                        <span class="hero-subtitle__before" data-i18n="hero.title">Prevent clinical information loss between shifts</span>
+                    </h2>
+
+                    <!-- Value proposition -->
+                    <p class="hero-description" data-hero-anim="true" data-i18n="hero.subtitle">
+                        Centralize SBAR handoffs, vital signs, treatments, and critical events in one secure, clear, and real-time accessible platform.
+                    </p>
+
+                    <!-- CTA buttons -->
+                    <div class="hero-buttons" data-hero-anim="true">
+                        <a class="btn btn-primary" id="demoBtn"
+                           href="https://front-nursepulse.vercel.app/sign-in"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-i18n="cta.demo"
+                           data-i18n-aria="accessibility.open-demo"
+                           aria-label="Open NursePulse web application demo">
+                            Try Demo
+                        </a>
+                        <a class="btn btn-secondary" id="how-it-worksBtn"
+                           href="#how-it-works"
+                           data-i18n="cta.how-it-works">
+                            See how it works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floating stethoscope image -->
+                <div class="hero-visual__img-wrap" aria-hidden="true">
+                    <img src="assets/stethoscope-with-heart-drawing.webp"
+                         alt=""
+                         class="hero-visual__img"
+                         width="1000"
+                         height="1000"
+                         loading="eager"
+                         decoding="async"
+                         fetchpriority="high">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Product-Demo-->
+    <section class="product-demo" id="product-demo">
+        <div class="container">
+            <h2 class="section-title product-demo__title" data-i18n="platform.title">Plataforma y propuesta de valor</h2>
+            <p class="product-demo__lead" data-i18n="platform.lead">
+                NursePulse centraliza la información clínica clave para que el traspaso entre turnos sea más claro, rápido y confiable.
+            </p>
+
+            <div class="product-demo__value-grid">
+                <article class="value-card">
+                    <h3 class="value-card__label" data-i18n="platform.card.1.title">Problema</h3>
+                    <p class="value-card__text" data-i18n="platform.card.1.desc">
+                        La información clínica suele quedar dispersa en hojas, chats o registros parciales, lo que genera omisiones y pérdida de continuidad asistencial.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <h3 class="value-card__label" data-i18n="platform.card.2.title">Para quién</h3>
+                    <p class="value-card__text" data-i18n="platform.card.2.desc">
+                        Hospitales, clínicas privadas y áreas de enfermería cardiovascular que necesitan registrar y consultar información crítica con orden.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <h3 class="value-card__label" data-i18n="platform.card.3.title">Beneficio</h3>
+                    <p class="value-card__text" data-i18n="platform.card.3.desc">
+                        Mejora la trazabilidad, reduce errores de traspaso y permite un seguimiento más seguro y oportuno del paciente.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem" aria-labelledby="problem-heading">
+        <div class="container">
+            <div class="problem-header reveal-on-scroll">
+                <!--<p class="problem-eyebrow" data-i18n="problem.eyebrow">The challenge</p>-->
+                <h2 class="section-title problem-heading" id="problem-heading" data-i18n="problem.title">The problem we solve</h2>
+                <p class="problem-lead" data-i18n="problem.lead">Clinical environments handle critical, time-sensitive information every day at every hour and yet the tools used to manage that information often fall short.</p>
+            </div>
+
+            <div class="problem-grid" role="list">
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+                            <rect x="9" y="3" width="6" height="4" rx="2"/>
+                            <line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.1.title">Manual, paper based processes</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.1.desc">Even today many clinical handoffs still rely on handwritten notes, printed sheets, and verbal summaries that are easy to misread, lose, or overlook between shifts.</p>
+                </article>
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="80" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <path d="M14 14h3m0 0h4m-4 0v3m0-3v-3"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.2.title">Fragmented information</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.2.desc">In many places, patient data lives across disconnected tools such as spreadsheets, chat apps and partially filled forms that makes it difficult to get a complete, up-to-date clinical picture.</p>
+                </article>
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="160" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.3.title">Coordination delays</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.3.desc">When medical teams cannot quickly access shared clinical records, critical decisions slow down and ultimately the patient is the one who suffers as a result.</p>
+                </article>
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="80" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.4.title">Loss of traceability</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.4.desc">Without a centralized audit trail, it becomes nearly impossible to reconstruct what happened, when, and who was responsible. This is ultimately, a key gap for clinical accountability.</p>
+                </article>
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="160" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 010 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.5.title">Discontinuity of care</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.5.desc">Shift changes are high-risk moments. When the outgoing team cannot fully pass context to the incoming team, patient care suffers from gaps in awareness and continuity.</p>
+                </article>
+
+                <article class="problem-card reveal-on-scroll" data-reveal-delay="240" role="listitem" tabindex="0">
+                    <div class="problem-card__icon-wrap" aria-hidden="true">
+                        <svg class="problem-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                            <line x1="2" y1="20" x2="22" y2="20"/>
+                        </svg>
+                    </div>
+                    <h3 class="problem-card__title" data-i18n="problem.card.6.title">Hidden inefficiencies</h3>
+                    <p class="problem-card__desc" data-i18n="problem.card.6.desc">Time spent searching for scattered records, re-entering data, or using slow/old services adds up which silently drains nursing capacity that should go directly to patients.</p>
+                </article>
+
+            </div>
+
+            <div class="problem-callout reveal-on-scroll" role="note" data-i18n-aria="accessibility.key-insight" aria-label="Key insight">
+                <div class="problem-callout__inner">
+                    <span class="problem-callout__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    </span>
+                    <p class="problem-callout__text" data-i18n="problem.callout">These are not isolated inconveniences but rather a pattern in many places. They are systemic risks embedded in how clinical teams communicate. With the well-being of many people at stake, these issues are too high to leave unaddressed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is it for? -->
+    <section class="who-is-it-for" id="who-is-it-for" aria-labelledby="audience-heading">
+        <div class="container">
+            <h2 class="section-title" id="audience-heading" data-i18n="audience.title">¿A quién va dirigido NursePulse?</h2>
+            <div class="cards-grid three-columns">
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="0" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M8 7h4M10 5v4M7 12h2m3 0h2M7 16h2m3 0h2M2 21h20M18 9h2a1 1 0 0 1 1 1v11"/></svg>
+                    </span>
+                    <h3 class="audience1" data-i18n="audience.1.title">Hospitales</h3>
+                    <p class="audience1-description" data-i18n="audience.1.desc">
+                        Instituciones que necesitan mejorar la continuidad asistencial y la trazabilidad clínica entre áreas y turnos.
+                    </p>
+                </article>
+
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="90" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 12h6M12 9v6M8 18h2m4 0h2"/></svg>
+                    </span>
+                    <h3 class="audience2" data-i18n="audience.2.title">Clínicas privadas</h3>
+                    <p class="audience2-description" data-i18n="audience.2.desc">
+                        Centros que buscan digitalizar procesos clínicos críticos y organizar mejor la información del paciente.
+                    </p>
+                </article>
+
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="180" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/><path d="M7 12h3l1.2-2.4L13 15l1.2-3H17"/></svg>
+                    </span>
+                    <h3 class="audience3-title" data-i18n="audience.3.title">Áreas de enfermería cardiovascular</h3>
+                    <p class="audience3-description" data-i18n="audience.3.desc">
+                        Equipos que requieren registrar SBAR, signos vitales, tratamientos y eventos clínicos con mayor orden y rapidez.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- About the Product -->
+    <section class="about-product" id="about-product" aria-labelledby="about-product-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="about-product__header reveal-on-scroll">
+                <h2 class="section-title about-product__heading" id="about-product-heading" data-i18n="about.title">
+                    More about NursePulse essence
+                </h2>
+                <p class="about-product__lead" data-i18n="about.lead">
+                    In just a few minutes, see the objective of NursePulse to structure shift handoffs, track patient events, and keep every member of the team aligned in real time.
+                </p>
+            </div>
+
+            <!-- Video block -->
+            <div class="about-product__video-wrap reveal-on-scroll" data-reveal-delay="100">
+                <div class="about-product__video-frame" role="group" aria-label="Product demo video">
+
+                    <!-- Decorative top bar mimicking a browser/player chrome -->
+                    <div class="about-product__chrome" aria-hidden="true">
+                        <span class="about-product__chrome-dot about-product__chrome-dot--red"></span>
+                        <span class="about-product__chrome-dot about-product__chrome-dot--yellow"></span>
+                        <span class="about-product__chrome-dot about-product__chrome-dot--green"></span>
+                        <span class="about-product__chrome-label">NursePulse</span>
+                    </div>
+
+                    <!-- 16:9 responsive embed container -->
+                    <div class="about-product__embed-ratio">
+                        <iframe
+                                class="about-product__iframe"
+                                src="https://www.youtube-nocookie.com/embed/3A5RHi0I9Y0?rel=0&modestbranding=1&color=white&controls=1&showinfo=0"
+                                title="NursePulse product demo — clinical shift handoff platform"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                                loading="lazy"
+                                frameborder="0"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Caption -->
+                <p class="about-product__caption" data-i18n="about.caption">
+                    <svg class="about-product__caption-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                    </svg>
+                    Short demo · No installation required
+                </p>
+            </div>
+
+            <!-- Trust strip below video -->
+            <div class="about-product__trust reveal-on-scroll" data-reveal-delay="160">
+                <div class="about-product__trust-item">
+                    <span class="about-product__trust-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </span>
+                    <span data-i18n="about.trust.1">Real-time updates</span>
+                </div>
+                <div class="about-product__trust-divider" aria-hidden="true"></div>
+                <div class="about-product__trust-item">
+                    <span class="about-product__trust-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </span>
+                    <span data-i18n="about.trust.2">Secure &amp; private</span>
+                </div>
+                <div class="about-product__trust-divider" aria-hidden="true"></div>
+                <div class="about-product__trust-item">
+                    <span class="about-product__trust-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </span>
+                    <span data-i18n="about.trust.3">Works on any device</span>
+                </div>
+                <div class="about-product__trust-divider" aria-hidden="true"></div>
+                <div class="about-product__trust-item">
+                    <span class="about-product__trust-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 010 7.75"/>
+                        </svg>
+                    </span>
+                    <span data-i18n="about.trust.4">Built for clinical teams</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--How-it-works-->
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+        <div class="container">
+            <h2 class="section-title" id="how-it-works-heading" data-i18n="steps.title">How it works in 3 steps</h2>
+            <p class="how-it-works-lead reveal-on-scroll" data-reveal-delay="60" data-i18n="steps.lead">
+                A guided clinical flow that turns scattered handoff details into one clear, auditable timeline.
+            </p>
+
+            <div class="how-it-works-layout">
+                <div class="how-it-works-steps">
+                    <ol class="steps" role="list">
+                        <li class="step reveal-on-scroll" data-reveal-delay="0" tabindex="0">
+                            <div class="step-number" aria-hidden="true">1</div>
+                            <h3 data-i18n="steps.1.title">Record clinical information</h3>
+                            <p data-i18n="steps.1.desc">Register SBAR handoffs, vital signs, treatments, and clinical events in one single platform.</p>
+                        </li>
+
+                        <li class="step reveal-on-scroll" data-reveal-delay="150" tabindex="0">
+                            <div class="step-number" aria-hidden="true">2</div>
+                            <h3 data-i18n="steps.2.title">Share and monitor</h3>
+                            <p data-i18n="steps.2.desc">Access updated information in real time to support continuity of care across shifts and departments.</p>
+                        </li>
+
+                        <li class="step reveal-on-scroll" data-reveal-delay="300" tabindex="0">
+                            <div class="step-number" aria-hidden="true">3</div>
+                            <h3 data-i18n="steps.3.title">Trace and audit</h3>
+                            <p data-i18n="steps.3.desc">Keep a clear history of actions, events, and decisions to improve control, follow-up, and safety.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <aside class="how-it-works-visual reveal-on-scroll" data-reveal-delay="180" data-i18n-aria="steps.visual.aria" aria-label="Visual summary of the flow">
+                    <div class="how-it-works-image-frame">
+                        <div class="visual-summary">
+                            <p class="visual-summary__eyebrow" data-i18n="steps.visual.eyebrow">Clinical flow</p>
+                            <div class="visual-summary__viewport">
+                                <ul class="visual-summary__list" role="list" tabindex="0" data-i18n-aria="steps.visual.list.aria" aria-label="Clinical flow items">
+                                    <li data-i18n="steps.visual.1">SBAR</li>
+                                    <li data-i18n="steps.visual.2">Vital signs</li>
+                                    <li data-i18n="steps.visual.3">Treatments</li>
+                                    <li data-i18n="steps.visual.4">Critical events</li>
+                                    <li data-i18n="steps.visual.5">Traceability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!--Features-->
+    <section class="features" id="features" aria-labelledby="features-heading">
+        <div class="container">
+            <div class="features-head reveal-on-scroll">
+                <p class="features-eyebrow" data-i18n="features.eyebrow">FUNCIONALIDADES</p>
+                <h2 class="section-title" id="features-heading" data-i18n="features.title">Características principales</h2>
+                <p class="features-lead" data-i18n="features.lead">
+                    NursePulse reúne las funciones necesarias para organizar, consultar y seguir información clínica relevante.
+                </p>
+            </div>
+
+            <div class="features-grid" role="list">
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 3v4a1 1 0 001 1h4"/>
+                            <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/>
+                            <line x1="9" y1="13" x2="15" y2="13"/>
+                            <line x1="9" y1="17" x2="13" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.1.title">SBAR digital</h3>
+                    <p data-i18n="features.1.desc">Estandariza el traspaso de información entre turnos y áreas asistenciales.</p>
+                </article>
+
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="80" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="3.5"/>
+                            <path d="M5 20v-1a7 7 0 0114 0v1"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.2.title">Gestión básica de pacientes</h3>
+                    <p data-i18n="features.2.desc">Organiza datos esenciales del paciente para una atención más clara y estructurada.</p>
+                </article>
+
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="160" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3.5" y="9" width="17" height="6" rx="3"/>
+                            <line x1="12" y1="9" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.3.title">Seguimiento de tratamientos</h3>
+                    <p data-i18n="features.3.desc">Registra y consulta tratamientos para mejorar la continuidad del cuidado.</p>
+                </article>
+
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="80" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12h4l1.5 4L12 6l2 6h7"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.4.title">Monitoreo de signos vitales</h3>
+                    <p data-i18n="features.4.desc">Lleva control clínico básico con información disponible en tiempo real.</p>
+                </article>
+
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="160" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.5.title">Historial clínico digital</h3>
+                    <p data-i18n="features.5.desc">Centraliza la información relevante para una mejor consulta y seguimiento.</p>
+                </article>
+
+                <article class="feature-card reveal-on-scroll" data-reveal-delay="240" role="listitem" tabindex="0">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.6.title">Log de auditoría inalterable</h3>
+                    <p data-i18n="features.6.desc">Mantiene trazabilidad de eventos críticos y acciones dentro de la plataforma.</p>
+                </article>
+            </div>
+
+            <p class="features-footnote reveal-on-scroll">
+                <span class="features-footnote__text" data-i18n="features.footnote.text">Confiabilidad, seguridad y control en cada etapa.</span>
+                <span class="features-footnote__highlight" data-i18n="features.footnote.highlight">Tu operación, siempre mejor ordenada.</span>
+            </p>
+        </div>
+    </section>
+    <!--Benefits-->
+    <section class="benefits" id="benefits" aria-labelledby="benefits-heading">
+        <div class="container">
+            <div class="benefits-shell reveal-on-scroll">
+                <div class="benefits-layout">
+                    <div class="benefits-copy">
+                        <p class="benefits-eyebrow" data-i18n="benefits.eyebrow">Impacto clínico</p>
+                        <h2 class="section-title benefits-heading" id="benefits-heading" data-i18n="benefits.title">Beneficios que se sienten en cada turno</h2>
+                        <p class="benefits-lead" data-i18n="benefits.lead">
+                            Un flujo único y ordenado para traspasos diarios, seguimiento clínico y supervisión del servicio en todo el equipo de salud.
+                        </p>
+
+                        <ul class="benefits-list" role="list">
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="0">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 6v6l4 2"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.1.kicker">Ahorro de tiempo</p>
+                                    <h3 data-i18n="benefits.card.1.title">Menos tiempo buscando, más tiempo cuidando</h3>
+                                    <p data-i18n="benefits.card.1.desc">
+                                        Los equipos dedican menos tiempo a buscar notas, mensajes u hojas de cálculo y más tiempo a la atención del paciente.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="90">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 6H5a2 2 0 00-2 2v4"></path>
+                                        <path d="M15 18h4a2 2 0 002-2v-4"></path>
+                                        <path d="M7 14l-4-4 4-4"></path>
+                                        <path d="M17 10l4 4-4 4"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.2.kicker">Mejor coordinación</p>
+                                    <h3 data-i18n="benefits.card.2.title">Contexto compartido entre turnos</h3>
+                                    <p data-i18n="benefits.card.2.desc">
+                                        Todos ven la misma información actualizada, lo que ayuda a mantener alineados a los profesionales y evita trabajo duplicado.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="180">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M9.5 12.2l1.9 1.9 3.9-4.2"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.3.kicker">Trazabilidad</p>
+                                    <h3 data-i18n="benefits.card.3.title">Un registro claro de lo que ocurre</h3>
+                                    <p data-i18n="benefits.card.3.desc">
+                                        Las acciones, cambios y eventos clínicos quedan ordenados para revisión, supervisión y responsabilidad.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="270">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 9v4"></path>
+                                        <path d="M12 17h.01"></path>
+                                        <path d="M10 3h4"></path>
+                                        <path d="M7 6h10"></path>
+                                        <path d="M6 21h12a2 2 0 002-2V7H4v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.4.kicker">Menos errores</p>
+                                    <h3 data-i18n="benefits.card.4.title">Reduce fallos manuales</h3>
+                                    <p data-i18n="benefits.card.4.desc">
+                                        La información centralizada disminuye omisiones, duplicados y detalles inconsistentes durante el traspaso.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="360">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 8a2 2 0 012-2h12a2 2 0 012 2"></path>
+                                        <path d="M4 16a2 2 0 002 2h12a2 2 0 002-2"></path>
+                                        <path d="M4 12h16"></path>
+                                        <path d="M7 6v12"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.5.kicker">UX más clara</p>
+                                    <h3 data-i18n="benefits.card.5.title">Suficientemente simple para equipos ocupados</h3>
+                                    <p data-i18n="benefits.card.5.desc">
+                                        Una interfaz intuitiva facilita la adopción en usuarios que necesitan avanzar rápido sin perder claridad.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <aside class="benefits-visual reveal-on-scroll" data-reveal-delay="120" data-i18n-aria="benefits.summary.aria" aria-label="Resumen del impacto clínico">
+                        <div class="benefits-visual__image">
+                            <img src="assets/clinic-medical-staff.webp" alt="" width="900" height="520" loading="lazy" decoding="async" aria-hidden="true">
+                            <div class="benefits-visual__overlay">
+                                <span class="benefits-visual__badge" data-i18n="benefits.summary.badge">Claridad clínica disponible las 24 horas del día</span>
+                                <strong data-i18n="benefits.summary.title">Una sola fuente de control</strong>
+                                <p data-i18n="benefits.summary.text">
+                                    Un servicio enfocado en mantener la información clínica correcta, organizada y visible en el momento adecuado.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="benefits-visual__stats" role="list" data-i18n-aria="benefits.metrics.aria" aria-label="Resumen de beneficios">
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.1.label">Traspasos más rápidos</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.1.value">Trabajo más fluido</strong>
+                            </article>
+
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.2.label">Control operativo</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.2.value">Más visibilidad</strong>
+                            </article>
+
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.3.label">Atención más segura</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.3.value">Menos tiempos muertos</strong>
+                            </article>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Team-->
+    <section class="team" id="team" aria-labelledby="team-heading">
+        <div class="team-bg" aria-hidden="true">
+            <span class="team-bg__blob team-bg__blob--1"></span>
+            <span class="team-bg__blob team-bg__blob--2"></span>
+        </div>
+        <div class="container">
+
+            <!-- Header -->
+            <div class="team-header reveal-on-scroll">
+                <h2 class="section-title team-heading" id="team-heading" data-i18n="team.title">Our team</h2>
+                <p class="team-intro" data-i18n="team.subtitle">
+                    Behind BrainSpark is a team committed to improving how clinical information is managed every day.
+                </p>
+            </div>
+
+            <div class="team-footer reveal-on-scroll" data-reveal-variant="scale">
+                <p class="team-footer__text" data-i18n="team.footer.text">
+                    A multidisciplinary team united by one goal: making clinical information work better for the people who need it most.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="team-grid" role="list">
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="0" data-reveal-variant="scale" role="listitem" tabindex="0">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Adrian-photo.webp"
+                                alt="Adrian Rios"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.1.role">Developer</p>
+                        <h3 class="team-card__name" data-i18n="team.1.name">Adrian Rios</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.1.tag">Development</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="90" data-reveal-variant="scale" role="listitem" tabindex="0">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Alex-photo.webp"
+                                alt="Alexander Aliaga"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.2.role">Team Leader</p>
+                        <h3 class="team-card__name" data-i18n="team.2.name">Alexander Aliaga</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.2.tag">Leadership</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="180" data-reveal-variant="scale" role="listitem" tabindex="0">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Anhelo-photo.webp"
+                                alt="Anhelo"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.3.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.3.name">Anhelo</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.3.tag">Design & UX</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="270" data-reveal-variant="scale" role="listitem" tabindex="0">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Johan-photo.webp"
+                                alt="Johan"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.4.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.4.name">Johan</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.4.tag">Engineering</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="360" data-reveal-variant="scale" role="listitem" tabindex="0">
+                    <div class="team-card__photo-wrap">
+                        <img
+                        class="team-card__photo"
+                        src="assets/Carlos-photo.webp"
+                        alt="Carlos"
+                        width="400" height="440"
+                        loading="lazy"
+                        decoding="async">
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.5.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.5.name">Carlos</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.5.tag">Engineering</span>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- About the Team -->
+    <section class="about-team" id="about-team" aria-labelledby="about-team-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="about-team__header reveal-on-scroll">
+                <h2 class="section-title about-team__heading" id="about-team-heading" data-i18n="about-team.title">
+                    The process behind NursePulse
+                </h2>
+                <p class="about-team__lead" data-i18n="about-team.lead">
+                    Watch our team talk about the challenge we set out to solve, how we approached it, and what building NursePulse taught us about designing for clinical environments.
+                </p>
+            </div>
+
+            <!-- Video block -->
+            <div class="about-team__video-wrap reveal-on-scroll" data-reveal-delay="100">
+                <div class="about-team__video-frame" role="group" aria-label="Team presentation video">
+
+                    <!-- Decorative chrome bar in MacOS style-->
+                    <div class="about-team__chrome" aria-hidden="true">
+                        <span class="about-team__chrome-dot about-team__chrome-dot--red"></span>
+                        <span class="about-team__chrome-dot about-team__chrome-dot--yellow"></span>
+                        <span class="about-team__chrome-dot about-team__chrome-dot--green"></span>
+                        <span class="about-team__chrome-label">BrainSpark — Team Presentation</span>
+                    </div>
+
+                    <!-- 16:9 responsive embed -->
+                    <div class="about-team__embed-ratio">
+                        <iframe
+                                class="about-team__iframe"
+                                src="https://www.youtube-nocookie.com/embed/qMjhRkYmLGU?rel=0&modestbranding=1&color=white&controls=1&showinfo=0"
+                                title="BrainSpark team presentation — the people behind NursePulse"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                                loading="lazy"
+                                frameborder="0"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Caption -->
+                <p class="about-team__caption" data-i18n="about-team.caption">
+                    <svg class="about-team__caption-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                    </svg>
+                    Team presentation · Our process · What we learned
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!--Contact-Us-->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="contact__header reveal-on-scroll">
+                <h2 class="section-title" id="contact-heading" data-i18n="contact.title">¿Hablamos?</h2>
+                <p class="contact__lead" data-i18n="contact.lead">
+                    Solicita una demo, haznos una consulta o cuéntanos qué necesita tu institución. Te respondemos pronto.
+                </p>
+            </div>
+
+            <div class="contact-body">
+
+                <!-- Form column -->
+                <div class="contact-form-wrap reveal-on-scroll" data-reveal-delay="0">
+                    <form
+                            id="contactForm"
+                            class="contact-form"
+                            novalidate
+                            data-i18n-aria="contact.form.aria"
+                            aria-label="Formulario de contacto"
+                    >
+                        <div class="contact-form__row">
+                            <label class="contact-form__field">
+                                <span class="contact-form__label" data-i18n="contact.form.name">Nombre</span>
+                                <input
+                                        type="text"
+                                        name="nombre"
+                                        class="contact-form__input"
+                                        autocomplete="given-name"
+                                        required
+                                        aria-required="true"
+                                        data-i18n-placeholder="contact.form.name.placeholder"
+                                        placeholder="Tu nombre"
+                                >
+                                <span class="contact-form__error" role="alert" aria-live="polite" data-i18n="contact.form.error.required">Este campo es obligatorio</span>
+                            </label>
+
+                            <label class="contact-form__field">
+                                <span class="contact-form__label" data-i18n="contact.form.lastname">Apellidos</span>
+                                <input
+                                        type="text"
+                                        name="apellidos"
+                                        class="contact-form__input"
+                                        autocomplete="family-name"
+                                        required
+                                        aria-required="true"
+                                        data-i18n-placeholder="contact.form.lastname.placeholder"
+                                        placeholder="Tus apellidos"
+                                >
+                                <span class="contact-form__error" role="alert" aria-live="polite" data-i18n="contact.form.error.required">Este campo es obligatorio</span>
+                            </label>
+                        </div>
+
+                        <label class="contact-form__field">
+                            <span class="contact-form__label" data-i18n="contact.form.email">Correo electrónico</span>
+                            <input
+                                    type="email"
+                                    name="email"
+                                    class="contact-form__input"
+                                    autocomplete="email"
+                                    required
+                                    aria-required="true"
+                                    data-i18n-placeholder="contact.form.email.placeholder"
+                                    placeholder="correo@institucion.com"
+                            >
+                            <span class="contact-form__error" role="alert" aria-live="polite" data-i18n="contact.form.error.email">Introduce un correo válido</span>
+                        </label>
+
+                        <label class="contact-form__field">
+                            <span class="contact-form__label" data-i18n="contact.form.institution">Institución</span>
+                            <input
+                                    type="text"
+                                    name="institucion"
+                                    class="contact-form__input"
+                                    autocomplete="organization"
+                                    required
+                                    aria-required="true"
+                                    data-i18n-placeholder="contact.form.institution.placeholder"
+                                    placeholder="Hospital o clínica"
+                            >
+                            <span class="contact-form__error" role="alert" aria-live="polite" data-i18n="contact.form.error.required">Este campo es obligatorio</span>
+                        </label>
+
+                        <label class="contact-form__field">
+                            <span class="contact-form__label" data-i18n="contact.form.interest">Motivo de contacto</span>
+                            <select
+                                    name="motivo"
+                                    class="contact-form__input contact-form__select"
+                                    aria-label="Motivo de contacto"
+                                    data-i18n-aria="contact.form.interest.aria"
+                            >
+                                <option value="" disabled selected data-i18n="contact.form.interest.default">Selecciona una opción</option>
+                                <option value="demo" data-i18n="contact.form.interest.demo">Solicitar demo</option>
+                                <option value="pricing" data-i18n="contact.form.interest.pricing">Información de precios</option>
+                                <option value="integration" data-i18n="contact.form.interest.integration">Integración con mi sistema</option>
+                                <option value="other" data-i18n="contact.form.interest.other">Otro</option>
+                            </select>
+                        </label>
+
+                        <label class="contact-form__field">
+                            <span class="contact-form__label" data-i18n="contact.form.message">Mensaje</span>
+                            <textarea
+                                    name="mensaje"
+                                    class="contact-form__input contact-form__textarea"
+                                    rows="4"
+                                    data-i18n-placeholder="contact.form.message.placeholder"
+                                    data-i18n-aria="contact.form.message.aria"
+                                    placeholder="Cuéntanos qué necesitas…"
+                                    aria-label="Mensaje opcional"
+                            ></textarea>
+                        </label>
+
+                        <button
+                                type="submit"
+                                class="btn btn-primary contact-form__submit"
+                                data-i18n="contact.form.submit"
+                        >
+                            Enviar mensaje
+                        </button>
+
+                        <!-- Success / error notices -->
+                        <div
+                                id="contactSubmitNotice"
+                                class="contact-form__notice contact-form__notice--success"
+                                role="status"
+                                aria-live="polite"
+                                aria-atomic="true"
+                                hidden
+                        >
+                            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-i18n="contact.form.success">¡Mensaje enviado! Te responderemos pronto.</span>
+                        </div>
+
+                        <div
+                                id="contactErrorNotice"
+                                class="contact-form__notice contact-form__notice--error"
+                                role="alert"
+                                aria-live="assertive"
+                                aria-atomic="true"
+                                hidden
+                        >
+                            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-i18n="contact.form.error.general">Revisa los campos marcados e inténtalo de nuevo.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="contact-aside reveal-on-scroll" data-reveal-delay="120" data-i18n-aria="contact.aside.aria" aria-label="Información de contacto y ubicación">
+
+                    <!-- Info cards -->
+                    <div class="contact-info">
+                        <a href="mailto:contacto@nursepulse.pe" class="contact-info-card" data-i18n-aria="contact.email.aria" aria-label="Enviar correo a contacto@nursepulse.pe">
+                            <span class="contact-info-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="3"/>
+                                    <path d="M2 7l10 7 10-7"/>
+                                </svg>
+                            </span>
+                            <div class="contact-info-card__body">
+                                <span class="contact-info-card__label" data-i18n="contact.info.email.label">Correo</span>
+                                <span class="contact-info-card__value">contacto@nursepulse.pe</span>
+                            </div>
+                            <svg class="contact-info-card__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 8h10M9 4l4 4-4 4"/>
+                            </svg>
+                        </a>
+
+                        <div class="contact-info-card contact-info-card--static">
+                            <span class="contact-info-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10A8 8 0 004 12c0 6 8 10 8 10z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </span>
+                            <div class="contact-info-card__body">
+                                <span class="contact-info-card__label" data-i18n="contact.info.location.label">Ubicación</span>
+                                <span class="contact-info-card__value" data-i18n="contact.info.location.value">Lima, Perú</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card contact-info-card--static">
+                            <span class="contact-info-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </span>
+                            <div class="contact-info-card__body">
+                                <span class="contact-info-card__label" data-i18n="contact.info.hours.label">Horario de atención</span>
+                                <span class="contact-info-card__value" data-i18n="contact.info.hours.value">Lun – Vie, 9:00 – 18:00 (GMT-5)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Embedded Google Map -->
+                    <div class="contact-map" data-i18n-aria="contact.map.aria" aria-label="Mapa de ubicación — Lima, Perú">
+                        <div class="contact-map__frame">
+                            <iframe
+                                    class="contact-map__iframe"
+                                    src="https://www.google.com/maps?q=UPC%20San%20Isidro%2C%20Lima%2C%20Peru&output=embed"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Ubicación de NursePulse en UPC San Isidro"
+                                    data-i18n-aria="contact.map.iframe.aria"
+                                    aria-label="Mapa interactivo de UPC San Isidro, Lima"
+                            ></iframe>
+                        </div>
+                        <p class="contact-map__caption" data-i18n="contact.map.caption">
+                            UPC San Isidro, Lima — punto de referencia del proyecto.
+                        </p>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!--Testimonials-->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="testimonials__header reveal-on-scroll">
+                <h2 class="section-title" id="testimonials-heading" data-i18n="testimonials.title">Lo que dicen los profesionales de salud</h2>
+                <p class="testimonials__lead" data-i18n="testimonials.lead">
+                    Equipos clínicos que ya han adoptado NursePulse comparten su experiencia con la plataforma.
+                </p>
+            </div>
+
+            <!-- Carousel / grid -->
+            <div
+                    class="testimonials-track-wrap"
+                    role="region"
+                    data-i18n-aria="testimonials.carousel.aria"
+                    aria-label="Carrusel de testimonios"
+                    aria-roledescription="carousel"
+            >
+                <!-- Prev / Next controls -->
+                <button
+                        class="testimonials-nav testimonials-nav--prev"
+                        id="testimonials-prev"
+                        data-i18n-aria="testimonials.prev.aria"
+                        aria-label="Testimonio anterior"
+                        aria-controls="testimonials-track"
+                        disabled
+                >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M13 4l-6 6 6 6"/>
+                    </svg>
+                </button>
+
+                <ol
+                        class="testimonials-track"
+                        id="testimonials-track"
+                        aria-live="polite"
+                        aria-atomic="false"
+                >
+                    <!-- Card 1 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="0"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.1.aria"
+                            aria-label="Testimonio 1 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.1.text">
+                                    "NursePulse transformó nuestros traspasos de turno. Antes perdíamos hasta 20 minutos buscando notas dispersas; ahora el equipo entrante tiene todo en pantalla antes de que terminemos el briefing."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar" aria-hidden="true">
+                                <span>GC</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.1.name">Gloria Carbajal</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.1.role">Jefa de enfermería</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.1.org">Hospital Cardiovascular, Lima</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 2 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="100"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.2.aria"
+                            aria-label="Testimonio 2 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.2.text">
+                                    "La trazabilidad de eventos críticos nos ayudó enormemente en una auditoría interna. Tuvimos el historial completo listo en minutos, algo que antes nos tomaba días reconstruir."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--b" aria-hidden="true">
+                                <span>CR</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.2.name">Carlos Ramírez</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.2.role">Coordinador clínico</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.2.org">Clínica Privada, Arequipa</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 3 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="200"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.3.aria"
+                            aria-label="Testimonio 3 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.3.text">
+                                    "Mis enfermeras adoptaron la plataforma en menos de una semana. La interfaz es clara, no sobrecarga y se adapta bien al ritmo real de una guardia cardiovascular."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--c" aria-hidden="true">
+                                <span>LP</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.3.name">Lucía Portocarrero</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.3.role">Médico de planta</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.3.org">Centro Especializado, Trujillo</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 4 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="300"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.4.aria"
+                            aria-label="Testimonio 4 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.4.text">
+                                    "El registro de signos vitales y tratamientos en un solo lugar eliminó los duplicados que teníamos antes. La continuidad entre turnos mejoró notablemente desde el primer mes."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--d" aria-hidden="true">
+                                <span>MA</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.4.name">Marcos Arrieta</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.4.role">Supervisor de enfermería</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.4.org">Hospital Regional, Cusco</span>
+                            </div>
+                        </footer>
+                    </li>
+                </ol>
+
+                <button
+                        class="testimonials-nav testimonials-nav--next"
+                        id="testimonials-next"
+                        data-i18n-aria="testimonials.next.aria"
+                        aria-label="Siguiente testimonio"
+                        aria-controls="testimonials-track"
+                >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M7 4l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dot indicators -->
+            <div class="testimonials-dots" role="tablist" data-i18n-aria="testimonials.select.aria" aria-label="Seleccionar testimonio">
+                <button class="testimonials-dot testimonials-dot--active" role="tab" aria-selected="true"  data-i18n-aria="testimonials.dot.1.aria" aria-label="Testimonio 1" data-index="0"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.2.aria" aria-label="Testimonio 2" data-index="1"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.3.aria" aria-label="Testimonio 3" data-index="2"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.4.aria" aria-label="Testimonio 4" data-index="3"></button>
+            </div>
+
+            <!-- Social-proof aggregate bar -->
+            <div class="testimonials-aggregate reveal-on-scroll" data-i18n-aria="testimonials.summary.aria" aria-label="Resumen de satisfacción">
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value">5.0</span>
+                    <div class="testimonials-aggregate__stars" aria-hidden="true">
+                        <svg viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                    </div>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.rating">Valoración media del piloto</span>
+                </div>
+                <div class="testimonials-aggregate__divider" aria-hidden="true"></div>
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value" data-i18n="testimonials.aggregate.adoption">100%</span>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.adoption.label">Adopción en la primera semana</span>
+                </div>
+                <div class="testimonials-aggregate__divider" aria-hidden="true"></div>
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value" data-i18n="testimonials.aggregate.handoff">−40%</span>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.handoff.label">Tiempo de traspaso entre turnos</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Pricing -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+        <div class="pricing-bg" aria-hidden="true">
+            <span class="pricing-bg__orb pricing-bg__orb--one"></span>
+            <span class="pricing-bg__orb pricing-bg__orb--two"></span>
+        </div>
+
+        <div class="container">
+            <header class="pricing__header reveal-on-scroll">
+                <p class="pricing__eyebrow" data-i18n="pricing.eyebrow">Planes flexibles</p>
+                <h2 class="section-title pricing__title" id="pricing-heading" data-i18n="pricing.title">
+                    Elige el plan que acompaña a tu equipo
+                </h2>
+                <p class="pricing__lead" data-i18n="pricing.lead">
+                    Accede a NursePulse mediante una suscripción mensual y elige la alternativa que mejor se adapte al momento de tu institución.
+                </p>
+            </header>
+
+            <div class="pricing-grid" role="list">
+                <article class="pricing-card reveal-on-scroll" data-reveal-delay="0" data-reveal-variant="scale" role="listitem">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.basic.level">Para comenzar</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.basic.name">Basic</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>9.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.basic.desc">
+                        Una entrada accesible para equipos que empiezan a ordenar y centralizar sus traspasos clínicos.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.1">Gestión de pacientes e historial clínico</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.2">Registro de signos vitales</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.3">Seguimiento de tratamientos</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.4">Traspasos SBAR digitales</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn pricing-card__button pricing-card__button--secondary"
+                       href="https://front-nursepulse.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.basic.cta"
+                       data-i18n-aria="pricing.basic.cta.aria"
+                       aria-label="Elegir el plan Basic en NursePulse">
+                        Elegir Basic
+                    </a>
+                </article>
+
+                <article class="pricing-card pricing-card--featured reveal-on-scroll" data-reveal-delay="100" data-reveal-variant="scale" role="listitem">
+                    <span class="pricing-card__badge" data-i18n="pricing.standard.badge">Recomendado</span>
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.standard.level">Para crecer</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.standard.name">Standard</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>19.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.standard.desc">
+                        La opción equilibrada para equipos clínicos en crecimiento que necesitan sostener un flujo de trabajo más amplio.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.1">Todo lo incluido en Basic</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.2">Alertas y eventos críticos</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.3">Dashboard clínico</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.4">Log de auditoría y trazabilidad</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn btn-primary pricing-card__button"
+                       href="https://front-nursepulse.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.standard.cta"
+                       data-i18n-aria="pricing.standard.cta.aria"
+                       aria-label="Elegir el plan Standard en NursePulse">
+                        Elegir Standard
+                    </a>
+                </article>
+
+                <article class="pricing-card reveal-on-scroll" data-reveal-delay="200" data-reveal-variant="scale" role="listitem">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.premium.level">Para escalar</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.premium.name">Premium</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>49.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.premium.desc">
+                        La alternativa de mayor alcance para instituciones que proyectan ampliar su operación con NursePulse.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.1">Todo lo incluido en Standard</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.2">Analítica y reportes avanzados</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.3">Roles y permisos institucionales</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.4">Evaluación de integración y acompañamiento</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn pricing-card__button pricing-card__button--secondary"
+                       href="https://front-nursepulse.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.premium.cta"
+                       data-i18n-aria="pricing.premium.cta.aria"
+                       aria-label="Elegir el plan Premium en NursePulse">
+                        Elegir Premium
+                    </a>
+                </article>
+            </div>
+
+            <p class="pricing__note reveal-on-scroll" data-reveal-delay="180" data-i18n="pricing.note">
+                La selección, el pago y la activación del plan se completan dentro de NursePulse.
+            </p>
+        </div>
+    </section>
+    <!--FAQ-->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll" id="faq-heading" data-i18n="faq.title">Preguntas frecuentes</h2>
+            <p class="faq__subtitle reveal-on-scroll" data-reveal-delay="80" data-i18n="faq.subtitle">Respuestas rápidas antes de agendar una demo.</p>
+
+            <div class="faq-list">
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="0">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.1.q">¿NursePulse está orientado solo a enfermería cardiovascular?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.1.a">
+                        Está pensado especialmente para ese entorno, pero su estructura puede adaptarse a otros contextos clínicos especializados.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="60">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.2.q">¿La información puede consultarse en tiempo real?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.2.a">
+                        Sí, la plataforma está orientada a permitir acceso rápido y actualizado a los registros clínicos principales.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="120">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.3.q">¿Es una solución para hospitales y clínicas?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.3.a">
+                        Sí, está dirigida a hospitales, clínicas privadas, centros especializados y profesionales de salud que necesiten orden y trazabilidad.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="180">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.4.q">¿Qué modelo de servicio ofrece NursePulse?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.4.a">
+                        NursePulse plantea un modelo SaaS por suscripción, con posibilidad de crecer según las necesidades de cada institución.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="240">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.5.q">¿NursePulse se integra con otros sistemas hospitalarios?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.5.a">
+                        NursePulse está pensado para complementar los sistemas hospitalarios existentes, y nuestro equipo revisa las necesidades de integración de cada institución de forma particular.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="300">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.6.q">¿Qué tipo de soporte ofrece el equipo?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.6.a">
+                        Nuestro equipo brinda acompañamiento en la implementación y soporte continuo para que el personal clínico adopte la plataforma sin contratiempos.
+                    </p>
+                </details>
+
+                <details class="faq-item reveal-on-scroll" data-reveal-delay="360">
+                    <summary aria-expanded="false">
+                        <span class="faq-item__question" data-i18n="faq.7.q">¿Cómo se configura el acceso para el equipo clínico?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </summary>
+                    <p class="faq-answer" data-i18n="faq.7.a">
+                        Cada institución define roles y permisos, de modo que cada integrante del equipo accede solo a la información relevante para su trabajo.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final call to action -->
+    <section class="final-cta" aria-labelledby="final-cta-heading">
+        <div class="container">
+            <div class="final-cta__panel reveal-on-scroll" data-reveal-variant="scale">
+                <div class="final-cta__content">
+                    <p class="final-cta__eyebrow" data-i18n="final-cta.eyebrow">NursePulse web</p>
+                    <h2 class="final-cta__title" id="final-cta-heading" data-i18n="final-cta.title">
+                        Ready to improve every clinical handoff?
+                    </h2>
+                    <p class="final-cta__text" data-i18n="final-cta.text">
+                        Access NursePulse and give your clinical team a clearer, safer way to keep critical information moving.
+                    </p>
+                </div>
+
+                <a
+                        class="final-cta__button"
+                        href="https://front-nursepulse.vercel.app/sign-in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n-aria="final-cta.button.aria"
+                        aria-label="Open NursePulse web application"
+                >
+                    <span data-i18n="final-cta.button">Go to NursePulse</span>
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 10h12M11 5l5 5-5 5"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<button type="button" class="back-to-top" id="backToTop" data-i18n-aria="accessibility.back-to-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+</button>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo" aria-label="Site footer">
+
+
+    <div class="footer-body">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Col 1: Brand -->
+                <div class="footer-brand-col">
+                    <a href="#" class="footer-logo" aria-label="NursePulse — go to top">
+                        <img src="assets/logo-optimized.png" alt="NursePulse logo" class="footer-logo__img" width="48" height="40" loading="lazy" decoding="async">
+                        <span class="footer-logo__text">NursePulse</span>
+                    </a>
+
+                    <!-- Inline ECG pulse animation -->
+                    <div class="footer-pulse" aria-hidden="true">
+                        <svg class="footer-pulse__svg" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline class="footer-pulse__line" points="0,20 40,20 55,20 65,5 75,35 85,20 100,20 115,20 125,8 135,32 145,20 200,20" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <p class="footer-tagline" data-i18n="footer.tagline">
+                        Smarter clinical handoffs. Safer patient care.
+                    </p>
+                    <p class="footer-desc" data-i18n="footer.desc">
+                        NursePulse is a clinical communication platform designed to reduce information loss, improve shift coordination, and bring traceability to every care team.
+                    </p>
+                </div>
+
+                <!-- Col 2: Product nav -->
+                <nav class="footer-nav-col" aria-label="Product navigation">
+                    <h3 class="footer-col-heading" data-i18n="footer.nav.product.title">Product</h3>
+                    <ul class="footer-nav-list" role="list">
+                        <li><a href="#product-demo" class="footer-nav-link" data-i18n="footer.nav.platform">Platform</a></li>
+                        <li><a href="#problem" class="footer-nav-link" data-i18n="footer.nav.problem">The Problem</a></li>
+                        <li><a href="#features" class="footer-nav-link" data-i18n="footer.nav.features">Features</a></li>
+                        <li><a href="#benefits" class="footer-nav-link" data-i18n="footer.nav.benefits">Benefits</a></li>
+                        <li><a href="#pricing" class="footer-nav-link" data-i18n="footer.nav.pricing">Plans</a></li>
+                        <li><a href="#who-is-it-for" class="footer-nav-link" data-i18n="footer.nav.who">Who is it for</a></li>
+                        <li><a href="#how-it-works" class="footer-nav-link" data-i18n="footer.nav.how">How it works</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Company nav -->
+                <nav class="footer-nav-col" aria-label="Company navigation">
+                    <h3 class="footer-col-heading" data-i18n="footer.nav.company.title">Company</h3>
+                    <ul class="footer-nav-list" role="list">
+                        <li><a href="#team" class="footer-nav-link" data-i18n="footer.nav.team">Our team</a></li>
+                        <li><a href="#faq" class="footer-nav-link" data-i18n="footer.nav.faq">FAQ</a></li>
+                        <li><a href="#contact" class="footer-nav-link" data-i18n="footer.nav.contact">Contact</a></li>
+                        <li>
+                            <button
+                                    type="button"
+                                    class="footer-nav-link footer-terms-btn"
+                                    aria-haspopup="dialog"
+                                    aria-controls="terms-modal"
+                                    data-i18n="footer.nav.terms"
+                            >Terms &amp; Conditions</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Col 4: Contact + trust badges -->
+                <div class="footer-contact-col">
+                    <h3 class="footer-col-heading" data-i18n="footer.contact.title">Get in touch</h3>
+                    <ul class="footer-contact-list" role="list">
+                        <li class="footer-contact-item">
+                                <span class="footer-contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                                </span>
+                            <a href="mailto:nursepulse@brainspark.dev" class="footer-contact-link">nursepulse@brainspark.dev</a>
+                        </li>
+                        <li class="footer-contact-item">
+                                <span class="footer-contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                                </span>
+                            <span class="footer-contact-text" data-i18n="footer.contact.response">Responds within 24 hours</span>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom__inner">
+                <p class="footer-copy">
+                    <span data-i18n="footer.copy.prefix">© 2025 NursePulse · Built by</span>
+                    <strong>&nbsp;BrainSpark</strong>.
+                    <span data-i18n="footer.copy.rights">All rights reserved.</span>
+                </p>
+                <div class="footer-bottom__links">
+                    <button
+                            type="button"
+                            class="footer-bottom-link footer-terms-btn"
+                            aria-haspopup="dialog"
+                            aria-controls="terms-modal"
+                            data-i18n="footer.nav.terms"
+                    >Terms &amp; Conditions</button>
+                    <span class="footer-bottom__sep" aria-hidden="true">·</span>
+                    <a href="mailto:nursepulse@brainspark.dev" class="footer-bottom-link" data-i18n="footer.nav.contact.short">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- Terms & Conditions -->
+<div
+        id="terms-modal"
+        class="modal-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="terms-modal-title"
+        aria-describedby="terms-modal-body"
+        hidden
+>
+    <div class="modal-panel">
+        <div class="modal-header">
+            <h2 class="modal-title" id="terms-modal-title" data-i18n="terms.title">Terms and Conditions of Service</h2>
+            <button
+                    type="button"
+                    class="modal-close"
+                    aria-label="Close terms and conditions"
+                    id="terms-modal-close"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="modal-body" id="terms-modal-body" tabindex="0">
+
+            <p class="modal-updated" data-i18n="terms.updated">Last updated: January 2025</p>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s1.title">1. Acceptance of Terms</h3>
+                <p data-i18n="terms.s1.body">By accessing or using NursePulse, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please discontinue use of the platform immediately. These terms apply to all users, including clinical staff, supervisors, and system administrators.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s2.title">2. Purpose and Intended Use</h3>
+                <p data-i18n="terms.s2.body">NursePulse is designed exclusively to support clinical information management and shift coordination within authorised healthcare institutions. The platform is not intended to replace clinical judgment, serve as a primary medical record system, or be used outside of its intended professional healthcare context.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s3.title">3. User Responsibilities</h3>
+                <p data-i18n="terms.s3.body">Users are responsible for maintaining the confidentiality of their access credentials, entering accurate and complete clinical information, using the platform in accordance with their institution's policies, and reporting any system anomalies or suspected security breaches to their administrator promptly.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s4.title">4. Patient Data and Privacy</h3>
+                <p data-i18n="terms.s4.body">NursePulse processes sensitive clinical and patient data. All data entered into the platform must comply with applicable health data protection regulations. BrainSpark does not sell, share, or use patient data for commercial purposes. Data is stored securely and access is restricted to authorised personnel within the subscribing institution.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s5.title">5. Clinical Disclaimer</h3>
+                <p data-i18n="terms.s5.body">NursePulse is a coordination and documentation tool. It does not provide medical advice, clinical diagnoses, or treatment recommendations. Clinical decisions remain the sole responsibility of qualified healthcare professionals. BrainSpark accepts no liability for clinical outcomes resulting from information recorded or accessed through the platform.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s6.title">6. Intellectual Property</h3>
+                <p data-i18n="terms.s6.body">All platform content, design, code, and branding are the intellectual property of BrainSpark. Reproduction, redistribution, or commercial use of any part of NursePulse without prior written consent is strictly prohibited.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s7.title">7. Modifications to Terms</h3>
+                <p data-i18n="terms.s7.body">BrainSpark reserves the right to update these terms at any time. Continued use of the platform following notification of changes constitutes acceptance of the revised terms. Users are encouraged to review this document periodically.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s8.title">8. Contact</h3>
+                <p data-i18n="terms.s8.body">For questions regarding these terms, please contact us at <a href="mailto:nursepulse@brainspark.dev" class="modal-link">nursepulse@brainspark.dev</a>. We are committed to ethical and transparent communication.</p>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="js/i18n.js" defer></script>
+<script src="js/script.js" defer></script>
+</body>
+</html>
