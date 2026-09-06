@@ -105,7 +105,7 @@ Puede revisar la Landing Page, explorar el contenido del producto y visualizar e
 
 ## *Equipo*  
 
-**NursePulse** es desarrollado por **BrainSpark**, un equipo de estudiantes de Ingeniería de Software enfocado en crear soluciones
+**NursePulse** es desarrollado por **HatunSOlutions**, un equipo de estudiantes de Ingeniería de Software enfocado en crear soluciones
 digitales para problemas reales.
 
 ## *Licencia*  
