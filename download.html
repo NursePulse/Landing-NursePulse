@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download NursePulse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .download-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0052cc 0%, #003d99 60%, #00277a 100%);
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-page::before {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            top: -200px; right: -200px;
+        }
+
+        .download-page::after {
+            content: '';
+            position: absolute;
+            width: 400px; height: 400px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            bottom: -150px; left: -150px;
+        }
+
+        .download-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 28px;
+            padding: 60px 50px;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 0.6s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dl-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .dl-tagline {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 36px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .dl-app-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #fff 0%, #e8f0ff 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            margin: 0 auto 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .dl-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .dl-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .dl-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .dl-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: #fff;
+            color: #0052cc;
+            padding: 18px 28px;
+            border-radius: 14px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dl-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 60%, rgba(0,82,204,0.08));
+        }
+
+        .dl-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+        }
+
+        .dl-btn-store-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .dl-btn-text {
+            text-align: left;
+        }
+
+        .dl-btn-text small {
+            display: block;
+            font-weight: 400;
+            font-size: 11px;
+            color: #64748b;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .dl-btn-text span {
+            display: block;
+            font-size: 16px;
+        }
+
+        .dl-btn.android {
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        .dl-btn.android small { color: rgba(255,255,255,0.55); }
+
+        .dl-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 4px 0;
+        }
+
+        .dl-divider-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .dl-divider-text {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .dl-features {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dl-feat {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.55);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dl-feat-dot {
+            width: 6px; height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dl-back {
+            margin-top: 28px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dl-back:hover { color: rgba(255,255,255,0.85); }
+
+        .dl-stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+
+        .dl-rating-text {
+            font-size: 12px;
+            color: rgba(255,255,255,0.45);
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 480px) {
+            .download-card { padding: 40px 24px; }
+            .dl-title { font-size: 26px; }
+            .dl-features { flex-direction: column; align-items: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-page">
+        <div class="download-card">
+            <div class="dl-logo">NursePulse</div>
+            <div class="dl-tagline">Clinical handoffs, without the gaps</div>
+            <div class="dl-app-icon">💼</div>
+            <h1 class="dl-title">Download the app &amp; start today</h1>
+            <p class="dl-subtitle">Centralize SBAR handoffs, vital signs and critical events from your phone, on shift or on the go. Available on iOS and Android.</p>
+            <div class="dl-stars">⭐⭐⭐⭐⭐</div>
+            <p class="dl-rating-text">4.8 · 2,400+ reviews</p>
+            <div class="dl-buttons">
+                <a href="https://github.com/app-movil-3821/chambaya-multiplatform-app-distribution/releases/download/realese-1.0.1/app-release.apk" class="dl-btn ios">
+                    <span class="dl-btn-store-icon">🍎</span>
+                    <div class="dl-btn-text">
+                        <small>Download on the</small>
+                        <span>App Store</span>
+                    </div>
+                </a>
+                <div class="dl-divider">
+                    <div class="dl-divider-line"></div>
+                    <span class="dl-divider-text">or</span>
+                    <div class="dl-divider-line"></div>
+                </div>
+                <a href="https://github.com/app-movil-3821/chambaya-app-distribution/releases/download/1.0.1/app-release.apk" class="dl-btn android">
+                    <span class="dl-btn-store-icon">🤖</span>
+                    <div class="dl-btn-text">
+                        <small>Download APK for</small>
+                        <span>Android</span>
+                    </div>
+                </a>
+            </div>
+            <div class="dl-features">
+                <div class="dl-feat"><span class="dl-feat-dot"></span> Free to download</div>
+                <div class="dl-feat"><span class="dl-feat-dot"></span> No credit card</div>
+                <div class="dl-feat"><span class="dl-feat-dot"></span> Instant setup</div>
+            </div>
+        </div>
+        <a href="index.html" class="dl-back">← Back to home</a>
+    </div>
+</body>
+</html>
